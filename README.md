@@ -30,4 +30,4 @@ gpg --key-origin wkd --import duxsco.gpg
 
 ### Why only WKD?
 
-I used to provide my public key over DANE, [HKPS](https://github.com/duxsco/gpg-keyserver) and WKD. DANE became irrelevant to me due to [bug T4618](https://dev.gnupg.org/T4618). HKPS has its own [drawbacks for providing 3rd party signatures](https://bugs.gentoo.org/878479). CERT, LDAP and NTDS share some of these drawbacks or are out of the question for public provisioning of public keys.
+I used to provide my public key over DANE, [HKPS](https://github.com/duxsco/gpg-keyserver) and WKD. DANE became irrelevant to me due to [bug T4618](https://dev.gnupg.org/T4618). HKPS has its own [drawbacks for providing 3rd party signatures](https://bugs.gentoo.org/878479). CERT, LDAP and NTDS share some of these drawbacks and/or are out of the question for public provisioning of public keys.
