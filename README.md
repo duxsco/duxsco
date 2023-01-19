@@ -14,7 +14,7 @@ If above command doesn't work due to disabled [WKD](https://wiki.gnupg.org/WKD) 
 gpg --auto-key-locate clear,wkd --locate-external-keys "d at myGitHubUsername dot de"
 ```
 
-If it still doesn't work due to reasons:
+The `openpgpkey.duxsco.de` URL can be double-checked with [metacode's WKD tool](https://metacode.biz/openpgp/web-key-directory). If above `gpg` commands don't work due to reasons:
 
 ```shell
 curl --tlsv1.3 -o duxsco.gpg "https://openpgpkey.duxsco.de/.well-known/openpgpkey/duxsco.de/hu/8o5dopsxjamgc3ujwjq4fyfbo3qn4kdw?l=d"
