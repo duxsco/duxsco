@@ -17,15 +17,15 @@ gpg --auto-key-locate clear,wkd --locate-external-keys "d at myGitHubUsername do
 If it still doesn't work due to reasons:
 
 ```shell
-curl --tlsv1.3 -o duxsco.asc "https://openpgpkey.duxsco.de/.well-known/openpgpkey/duxsco.de/hu/8o5dopsxjamgc3ujwjq4fyfbo3qn4kdw?l=d"
+curl --tlsv1.3 -o duxsco.gpg "https://openpgpkey.duxsco.de/.well-known/openpgpkey/duxsco.de/hu/8o5dopsxjamgc3ujwjq4fyfbo3qn4kdw?l=d"
 # or
-wget --secure-protocol=TLSv1_3 --max-redirect=0 -O duxsco.asc "https://openpgpkey.duxsco.de/.well-known/openpgpkey/duxsco.de/hu/8o5dopsxjamgc3ujwjq4fyfbo3qn4kdw?l=d"
+wget --secure-protocol=TLSv1_3 --max-redirect=0 -O duxsco.gpg "https://openpgpkey.duxsco.de/.well-known/openpgpkey/duxsco.de/hu/8o5dopsxjamgc3ujwjq4fyfbo3qn4kdw?l=d"
 
 # Check whether everything is kosher before importing for real:
-gpg --import-options show-only --import duxsco.asc
+gpg --import-options show-only --import duxsco.gpg
 
 # If everything is fine, import the public key:
-gpg --key-origin wkd --import duxsco.asc
+gpg --key-origin wkd --import duxsco.gpg
 ```
 
 ### Why only WKD?
