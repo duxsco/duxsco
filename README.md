@@ -40,7 +40,7 @@ gpg --list-options show-only-fpr-mbox --list-keys "d at myGitHubUsername dot de"
 gpg --keyserver hkps://revoked.duxsco.de --recv-keys "my GnuPG public key fingerprint"
 
 # List the GnuPG public key incl. revoked subkeys:
-gpg --list-keys --list-options show-unusable-subkeys "d at myGitHubUsername dot de"
+gpg --list-options show-unusable-subkeys --list-keys "d at myGitHubUsername dot de"
 ```
 
 ### Why only WKD?
