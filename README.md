@@ -28,6 +28,21 @@ gpg --import-options show-only --import duxsco.gpg
 gpg --key-origin wkd --import duxsco.gpg
 ```
 
+### Revoked Subkeys
+
+My revoked subkeys are not provided over WKD in order to keep the GnuPG public key there as slim as possible. If you need my revoked subkeys for reasons, you can fetch them over [HKPS](https://github.com/duxsco/gpg-keyserver/):
+
+```shell
+# After above GnuPG public key retrieval over WKD, print the fingerprint:
+gpg --list-options show-only-fpr-mbox --list-keys "d at myGitHubUsername dot de"
+
+# Fetch the revoked subkeys:
+gpg --keyserver hkps://revoked.duxsco.de --recv-keys "my GnuPG public key fingerprint"
+
+# List the GnuPG public key incl. revoked subkeys:
+gpg --list-keys --list-options show-unusable-subkeys "d at myGitHubUsername dot de"
+```
+
 ### Why only WKD?
 
 I used to provide my public key over DANE, [HKPS](https://github.com/duxsco/gpg-keyserver) and WKD. DANE became irrelevant to me due to [bug T4618](https://dev.gnupg.org/T4618). HKPS has its own [drawbacks for providing 3rd party signatures](https://bugs.gentoo.org/878479). CERT, LDAP and NTDS share some of these drawbacks and/or are out of the question for public provisioning of public keys.
