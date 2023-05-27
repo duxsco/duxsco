@@ -1,8 +1,8 @@
-### My GnuPG Public Key
+### My OpenPGP Public Key
 
-All Git commits and tags as well as release files auto-created by GitHub are GnuPG signed. [Release files are checked](https://github.com/duxsco/gentoo-installation/blob/main/assets/check_sign_release.sh) prior to signing.
+All Git commits and tags as well as release files auto-created by GitHub are OpenPGP signed. [Release files are checked](https://github.com/duxsco/gentoo-installation/blob/main/assets/check_sign_release.sh) prior to signing.
 
-You can fetch my GnuPG public key the following way:
+You can fetch my OpenPGP public key the following way:
 
 ```shell
 gpg --locate-external-keys "d at myGitHubUsername dot de"
@@ -30,16 +30,16 @@ gpg --key-origin wkd --import duxsco.gpg
 
 ### Revoked Subkeys
 
-My revoked subkeys are not provided over WKD in order to keep the GnuPG public key there as slim as possible. If you need my revoked subkeys for reasons, you can fetch them over [HKPS](https://github.com/duxsco/gpg-keyserver/):
+My revoked subkeys are not provided over WKD in order to keep the OpenPGP public key there as slim as possible. If you need my revoked subkeys for reasons, you can fetch them over [HKPS](https://github.com/duxsco/gpg-keyserver/):
 
 ```shell
-# After above GnuPG public key retrieval over WKD, print the fingerprint:
+# After above OpenPGP public key retrieval over WKD, print the fingerprint:
 gpg --list-options show-only-fpr-mbox --list-keys "d at myGitHubUsername dot de"
 
 # Fetch the revoked subkeys:
-gpg --keyserver hkps://revoked.duxsco.de --recv-keys "my GnuPG public key fingerprint"
+gpg --keyserver hkps://revoked.duxsco.de --recv-keys "my OpenPGP public key fingerprint"
 
-# List the GnuPG public key incl. revoked subkeys:
+# List the OpenPGP public key incl. revoked subkeys:
 gpg --list-options show-unusable-subkeys --list-keys "d at myGitHubUsername dot de"
 ```
 
