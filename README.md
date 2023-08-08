@@ -28,18 +28,18 @@ gpg --import-options show-only --import duxsco.gpg
 gpg --key-origin wkd --import duxsco.gpg
 ```
 
-### Revoked Subkeys
+### Expired Subkeys
 
-My revoked subkeys are not provided over WKD in order to keep the OpenPGP public key there as slim as possible. If you need my revoked subkeys for reasons, you can fetch them over [HKPS](https://github.com/duxsco/gpg-keyserver/):
+My subkeys have a certain validity. After they expire, I revoke them if they are not needed anymore. These subkeys are not provided over WKD in order to keep the OpenPGP public key there as slim as possible. If you need them for reasons, you can fetch over [HKPS](https://github.com/duxsco/gpg-keyserver/):
 
 ```shell
 # After above OpenPGP public key retrieval over WKD, print the fingerprint:
 gpg --list-options show-only-fpr-mbox --list-keys "d at myGitHubUsername dot de"
 
-# Fetch the revoked subkeys:
+# Fetch the expired (and revoked) subkeys:
 gpg --keyserver hkps://revoked.duxsco.de --recv-keys "my OpenPGP public key fingerprint"
 
-# List the OpenPGP public key incl. revoked subkeys:
+# List the OpenPGP public key incl. expired (and revoked) subkeys:
 gpg --list-options show-unusable-subkeys --list-keys "d at myGitHubUsername dot de"
 ```
 
